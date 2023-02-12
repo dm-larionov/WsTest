@@ -201,8 +201,8 @@ namespace WsTest
 
 			if (isValidFramerate == false)
 			{
-				ResultRenderDuration_LB.Content = "Неверно";
-				ResultRenderDuration_LB.Background = new SolidColorBrush(Colors.Red);
+				ResultRenderFramerate_LB.Content = "Неверно";
+				ResultRenderFramerate_LB.Background = new SolidColorBrush(Colors.Red);
 			}
 
 			if (isValidName && isValidFormat && isValidDuration && isValidSize && isValidFramerate)
