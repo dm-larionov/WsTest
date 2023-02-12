@@ -1,0 +1,26 @@
+﻿<Window x:Class="WsTest.InfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WsTest"
+        mc:Ignorable="d"
+        Title="InfoWindow" Height="450" Width="400">
+    <Grid>
+        <Label Content="Справочная информация" HorizontalAlignment="Center" Margin="0,17,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ключевые слова:" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top"/>
+        <Label Content=" {FIO} - ФИО конкурсанта" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top"/>
+        <Label Content=" {resolution} - разрешение рендера" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
+        <Label Content=" {codec} - кодек рендера" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top"/>
+
+        <Label Content="Перед проверкой все поля должны быть заполнены корректно" HorizontalAlignment="Left" Margin="10,163,0,0" VerticalAlignment="Top"/>
+        <Label Content="Если требуемая папка не обнаружена - все критерии неверные" HorizontalAlignment="Left" Margin="10,189,0,0" VerticalAlignment="Top"/>
+        <Label Content="ФИО проверяется транслитом" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top"/>
+        <Label Content="Длительность указывается в формате 00:00:00 (чч:мм:сс)" HorizontalAlignment="Left" Margin="10,241,0,0" VerticalAlignment="Top"/>
+        <Label Content="Кодеки: h264, h265, quicktime" HorizontalAlignment="Left" Margin="10,267,0,0" VerticalAlignment="Top"/>
+        <Label Content="Разрешение в формате 1000x1000 (ШИРИНАxВЫСОТА)" HorizontalAlignment="Left" Margin="10,293,0,0" VerticalAlignment="Top"/>
+        <Label Content="Значения указываются через пробел (формат и разрешение)" HorizontalAlignment="Left" Margin="10,319,0,0" VerticalAlignment="Top"/>
+        <Button Content="ОК" HorizontalAlignment="Left" Margin="150,386,0,0" VerticalAlignment="Top" Width="83" Click="Button_Click"/>
+
+    </Grid>
+</Window>

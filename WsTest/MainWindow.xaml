@@ -1,0 +1,164 @@
+﻿<Window x:Class="WsTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WsTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="1050">
+    <Window.Resources>
+        <Image x:Key="MyImage" Source="./info_icon.png" Width="40"/>
+    </Window.Resources>
+    <Grid>
+        <Button Content="Открыть" HorizontalAlignment="Left" Margin="130,109,0,0" VerticalAlignment="Top" Width="88" Click="OpenFolder_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="640,228,0,0" VerticalAlignment="Top"/>
+
+        <Grid Margin="532,0,0,0" Background="#FFD2D2D2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Настройки для проверки работы" Grid.Row="0" Margin="10" VerticalAlignment="Top" Background="#FFF3F3F3"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Content="Имя главной папки" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                <TextBox x:Name="ProjectName_TB" Grid.Row="0" Grid.Column="1" Margin="5" TextChanged="ProjectName_TB_TextChanged"/>
+
+                <Label Content="Имя файла .aep" Grid.Row="1" Grid.Column="0" Margin="5"/>
+                <TextBox x:Name="AepName_TB" Grid.Row="1" Grid.Column="1" Margin="5" TextChanged="AepName_TB_TextChanged"/>
+
+                <Label Content="Проверка видеоряда:" Grid.ColumnSpan="2" Grid.Row="2" Margin="5" Background="#FFE8E8E8"/>
+                <!--<CheckBox x:Name="CheckFootage_CB" Content="Да / Нет" Grid.Row="2" Grid.Column="1" Margin="5"/>-->
+
+                <Label Content="Имя папки рендеров" Grid.Row="3" Grid.Column="0" Margin="5"/>
+                <TextBox x:Name="RenderFolderName_TB" Grid.Row="3" Grid.Column="1" Margin="5" TextChanged="RenderFolderName_TB_TextChanged"/>
+
+                <Label Content="Имя рендера" Grid.Row="4" Grid.Column="0" Margin="5"/>
+                <TextBox x:Name="RenderNames_TB" Grid.Row="4" Grid.Column="1" Margin="5" TextChanged="RenderNames_TB_TextChanged"/>
+
+                <Label Content="Форматы рендеров" Grid.Row="5" Grid.Column="0" Margin="5"/>
+                <TextBox x:Name="RenderFormats_TB" Grid.Row="5" Grid.Column="1" Margin="5" TextChanged="RenderFormats_TB_TextChanged"/>
+
+                <Label Content="Количество рендеров" Grid.Row="6" Grid.Column="0" Margin="5"/>
+                <TextBox x:Name="RenderCount_TB" Grid.Row="6" Grid.Column="1" Margin="5" TextChanged="RenderCount_TB_TextChanged"/>
+
+                <Label Content="Длина рендера" Grid.Row="7" Grid.Column="0" Margin="5"/>
+                <TextBox x:Name="RenderDuration_TB" Grid.Row="7" Grid.Column="1" Margin="5" TextChanged="RenderDuration_TB_TextChanged"/>
+
+                <Label Content="Разрешения рендеров" Grid.Row="8" Grid.Column="0" Margin="5"/>
+                <TextBox x:Name="RenderSizes_TB" Grid.Row="8" Grid.Column="1" Margin="5" TextChanged="RenderSizes_TB_TextChanged"/>
+
+                <Label Content="Фреймрейт рендера" Grid.Row="9" Grid.Column="0" Margin="5"/>
+                <TextBox x:Name="RenderFramerate_TB" Grid.Row="9" Grid.Column="1" Margin="5" TextChanged="RenderFramerate_TB_TextChanged"/>
+
+
+                <Label Content="Проверка сценария:" Grid.ColumnSpan="2" Grid.Row="11" Margin="5" Background="#FFE8E8E8"/>
+                <!--<CheckBox x:Name="CheckFootage_CB" Content="Да / Нет" Grid.Row="2" Grid.Column="1" Margin="5"/>-->
+
+
+                <Label Content="Имя папки сценария" Grid.Row="12" Grid.Column="0" Margin="5"/>
+                <TextBox x:Name="ScenaryFolderName_TB" Grid.Row="12" Grid.Column="1" Margin="5" TextChanged="ScenaryFolderName_TB_TextChanged"/>
+
+                <Label Content="Имя сценария" Grid.Row="13" Grid.Column="0" Margin="5"/>
+                <TextBox x:Name="ScenaryName_TB" Grid.Row="13" Grid.Column="1" Margin="5" TextChanged="ScenaryName_TB_TextChanged"/>
+            </Grid>
+            <Button Content="Сохранить настройки" HorizontalAlignment="Center" Margin="0,520,0,0" Grid.Row="1" VerticalAlignment="Top" Click="SaveSettings_Click" Width="160"/>
+        </Grid>
+        <TextBox x:Name="FIO_TB" HorizontalAlignment="Left" Margin="130,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" TextChanged="FIO_TB_TextChanged"/>
+        <Label Content="ФИО конкурсанта" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Папка конкурсанта" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"/>
+        <Label Content="Расположение: " HorizontalAlignment="Left" Margin="10,106,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Path_LB" HorizontalAlignment="Left" Margin="130,83,0,0" VerticalAlignment="Top"/>
+        <Grid HorizontalAlignment="Left" Height="437" Margin="10,166,0,0" VerticalAlignment="Top" Width="412" Background="#FFE4E4E4">
+            <Label Content="Результаты проверки" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="391" Background="#FFF9F9F9"/>
+
+            <Grid Margin="10,45,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label Content="Имя главной папки" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                <Label x:Name="ResultRootFolderName_LB" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+                <Label Content="Имя файла .aep" Grid.Row="1" Grid.Column="0" Margin="5"/>
+                <Label x:Name="ResultProjectName_LB" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+                <Label Content="Имя папки рендеров" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                <Label x:Name="ResultRenderFolderName_LB" Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+                <Label Content="Имя рендера" Grid.Row="3" Grid.Column="0" Margin="5"/>
+                <Label x:Name="ResultRenderName_LB" Grid.Row="3" Grid.Column="1" Margin="5"/>
+
+                <Label Content="Форматы рендеров" Grid.Row="4" Grid.Column="0" Margin="5"/>
+                <Label x:Name="ResultRenderFormatsName_LB" Grid.Row="4" Grid.Column="1" Margin="5"/>
+
+                <Label Content="Количество рендеров" Grid.Row="5" Grid.Column="0" Margin="5"/>
+                <Label x:Name="ResultRenderCount_LB" Grid.Row="5" Grid.Column="1" Margin="5"/>
+                
+                <Label Content="Длина рендера" Grid.Row="6" Grid.Column="0" Margin="5"/>
+                <Label x:Name="ResultRenderDuration_LB" Grid.Row="6" Grid.Column="1" Margin="5"/>
+
+                <Label Content="Разрешения рендеров" Grid.Row="7" Grid.Column="0" Margin="5"/>
+                <Label x:Name="ResultRenderResolution_LB" Grid.Row="7" Grid.Column="1" Margin="5"/>
+
+                <Label Content="Фреймрейт рендера" Grid.Row="8" Grid.Column="0" Margin="5"/>
+                <Label x:Name="ResultRenderFramerate_LB" Grid.Row="8" Grid.Column="1" Margin="5"/>
+
+                <Label Content="Имя папки сценария" Grid.Row="9" Grid.Column="0" Margin="5"/>
+                <Label x:Name="ResultScenaryFolderName_LB" Grid.Row="9" Grid.Column="1" Margin="5"/>
+
+                <Label Content="Имя сценария" Grid.Row="10" Grid.Column="0" Margin="5"/>
+                <Label x:Name="ResultScenaryName_LB" Grid.Row="10" Grid.Column="1" Margin="5"/>
+            </Grid>
+        </Grid>
+        <Button Content="Проверить" HorizontalAlignment="Left" Margin="112,141,0,0" VerticalAlignment="Top" Width="172" Click="CheckWork_Click"/>
+        <Label Content="Транслит:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="TranslitFIO_LB" HorizontalAlignment="Left" Margin="130,41,0,0" VerticalAlignment="Top"/>
+        <Button  HorizontalAlignment="Left" Margin="469,10,0,0" VerticalAlignment="Top" Click="InfoButton_Click">
+            <Image Source="pic/info_icon.png" Width="30" Height="30" />
+        </Button>
+
+    </Grid>
+</Window>
